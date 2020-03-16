@@ -1,0 +1,19 @@
+#include "crkbd.h"
+
+uint8_t logo_w(void) {
+    return 7;
+}
+uint8_t logo_patterns(void) {
+    return 1;
+}
+const char *read_logo_ex(int pattern) {
+  static char logo[1][25] = {
+        {
+            0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0,
+            0xa0, 0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0,
+            0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0xc5, 0xc6, 0,
+        0},
+      };
+
+  return logo[pattern];
+}
